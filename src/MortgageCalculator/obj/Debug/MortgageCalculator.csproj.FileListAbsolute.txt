@@ -1,0 +1,23 @@
+C:\Users\Anthony\source\repos\WindowsFormsMortgageCalculatorApp\WindowsFormsMortgageCalculatorApp\bin\Debug\DemoMortgage.mdf
+C:\Users\Anthony\source\repos\WindowsFormsMortgageCalculatorApp\WindowsFormsMortgageCalculatorApp\bin\Debug\DemoMortgage_log.ldf
+C:\Users\Anthony\source\repos\WindowsFormsMortgageCalculatorApp\WindowsFormsMortgageCalculatorApp\bin\Debug\Mortgage Calculator.exe.config
+C:\Users\Anthony\source\repos\WindowsFormsMortgageCalculatorApp\WindowsFormsMortgageCalculatorApp\bin\Debug\Mortgage Calculator.exe
+C:\Users\Anthony\source\repos\WindowsFormsMortgageCalculatorApp\WindowsFormsMortgageCalculatorApp\bin\Debug\Mortgage Calculator.pdb
+C:\Users\Anthony\source\repos\WindowsFormsMortgageCalculatorApp\WindowsFormsMortgageCalculatorApp\obj\Debug\MortgageCalculator.MainForm.resources
+C:\Users\Anthony\source\repos\WindowsFormsMortgageCalculatorApp\WindowsFormsMortgageCalculatorApp\obj\Debug\MortgageCalculator.Properties.Resources.resources
+C:\Users\Anthony\source\repos\WindowsFormsMortgageCalculatorApp\WindowsFormsMortgageCalculatorApp\obj\Debug\MortgageCalculator.csproj.GenerateResource.cache
+C:\Users\Anthony\source\repos\WindowsFormsMortgageCalculatorApp\WindowsFormsMortgageCalculatorApp\obj\Debug\MortgageCalculator.csproj.CoreCompileInputs.cache
+C:\Users\Anthony\source\repos\WindowsFormsMortgageCalculatorApp\WindowsFormsMortgageCalculatorApp\obj\Debug\Mortgage Calculator.exe
+C:\Users\Anthony\source\repos\WindowsFormsMortgageCalculatorApp\WindowsFormsMortgageCalculatorApp\obj\Debug\Mortgage Calculator.pdb
+C:\Users\Anthony\source\repos\MortgageCalculator\src\MortgageCalculator\bin\Debug\Mortgage Calculator.exe.config
+C:\Users\Anthony\source\repos\MortgageCalculator\src\MortgageCalculator\bin\Debug\Mortgage Calculator.exe
+C:\Users\Anthony\source\repos\MortgageCalculator\src\MortgageCalculator\bin\Debug\Mortgage Calculator.pdb
+C:\Users\Anthony\source\repos\MortgageCalculator\src\MortgageCalculator\obj\Debug\MortgageCalculator.MainForm.resources
+C:\Users\Anthony\source\repos\MortgageCalculator\src\MortgageCalculator\obj\Debug\MortgageCalculator.Properties.Resources.resources
+C:\Users\Anthony\source\repos\MortgageCalculator\src\MortgageCalculator\obj\Debug\MortgageCalculator.csproj.GenerateResource.cache
+C:\Users\Anthony\source\repos\MortgageCalculator\src\MortgageCalculator\obj\Debug\MortgageCalculator.csproj.CoreCompileInputs.cache
+C:\Users\Anthony\source\repos\MortgageCalculator\src\MortgageCalculator\obj\Debug\Mortgage Calculator.exe
+C:\Users\Anthony\source\repos\MortgageCalculator\src\MortgageCalculator\obj\Debug\Mortgage Calculator.pdb
+C:\Users\Anthony\source\repos\MortgageCalculator\src\MortgageCalculator\obj\Debug\MortgageCalculator.csprojAssemblyReference.cache
+C:\Users\Anthony\source\repos\MortgageCalculator\src\MortgageCalculator\bin\Debug\Mortgages.mdf
+C:\Users\Anthony\source\repos\MortgageCalculator\src\MortgageCalculator\bin\Debug\Mortgages_log.ldf
