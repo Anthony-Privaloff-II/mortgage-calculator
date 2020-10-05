@@ -59,6 +59,7 @@
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonLoad = new System.Windows.Forms.Button();
             this.textBoxSave = new System.Windows.Forms.TextBox();
+            this.labelValidation = new System.Windows.Forms.Label();
             this.panelCalculate.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -170,6 +171,7 @@
             // panelCalculate
             // 
             this.panelCalculate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelCalculate.Controls.Add(this.labelValidation);
             this.panelCalculate.Controls.Add(this.label1);
             this.panelCalculate.Controls.Add(this.comboBoxPeriodInput);
             this.panelCalculate.Controls.Add(this.textBoxInterestRateInput);
@@ -320,7 +322,6 @@
             // buttonSave
             // 
             this.buttonSave.BackColor = System.Drawing.SystemColors.Control;
-            this.buttonSave.Enabled = false;
             this.buttonSave.Location = new System.Drawing.Point(3, 5);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(75, 23);
@@ -338,6 +339,7 @@
             this.panel1.Controls.Add(this.buttonLoad);
             this.panel1.Controls.Add(this.buttonSave);
             this.panel1.Controls.Add(this.textBoxSave);
+            this.panel1.Enabled = false;
             this.panel1.Location = new System.Drawing.Point(472, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(300, 84);
@@ -346,7 +348,6 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Enabled = false;
             this.label4.Location = new System.Drawing.Point(0, 40);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 13);
@@ -356,7 +357,6 @@
             // comboBoxLoad
             // 
             this.comboBoxLoad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxLoad.Enabled = false;
             this.comboBoxLoad.FormattingEnabled = true;
             this.comboBoxLoad.Location = new System.Drawing.Point(155, 4);
             this.comboBoxLoad.Name = "comboBoxLoad";
@@ -366,7 +366,6 @@
             // buttonDelete
             // 
             this.buttonDelete.BackColor = System.Drawing.SystemColors.Control;
-            this.buttonDelete.Enabled = false;
             this.buttonDelete.Location = new System.Drawing.Point(220, 56);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(75, 23);
@@ -378,7 +377,6 @@
             // buttonLoad
             // 
             this.buttonLoad.BackColor = System.Drawing.SystemColors.Control;
-            this.buttonLoad.Enabled = false;
             this.buttonLoad.Location = new System.Drawing.Point(220, 31);
             this.buttonLoad.Name = "buttonLoad";
             this.buttonLoad.Size = new System.Drawing.Size(75, 23);
@@ -390,12 +388,22 @@
             // textBoxSave
             // 
             this.textBoxSave.BackColor = System.Drawing.SystemColors.Window;
-            this.textBoxSave.Enabled = false;
             this.textBoxSave.Location = new System.Drawing.Point(3, 56);
             this.textBoxSave.MaxLength = 15;
             this.textBoxSave.Name = "textBoxSave";
             this.textBoxSave.Size = new System.Drawing.Size(140, 20);
             this.textBoxSave.TabIndex = 4;
+            // 
+            // labelValidation
+            // 
+            this.labelValidation.AutoSize = true;
+            this.labelValidation.ForeColor = System.Drawing.Color.Red;
+            this.labelValidation.Location = new System.Drawing.Point(84, 61);
+            this.labelValidation.Name = "labelValidation";
+            this.labelValidation.Size = new System.Drawing.Size(145, 13);
+            this.labelValidation.TabIndex = 18;
+            this.labelValidation.Text = "* All fields must have a value.";
+            this.labelValidation.Visible = false;
             // 
             // MainForm
             // 
@@ -406,7 +414,6 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelCalculate);
-            this.Cursor = System.Windows.Forms.Cursors.AppStarting;
             this.ForeColor = System.Drawing.SystemColors.WindowText;
             this.Name = "MainForm";
             this.Text = "Mortgage Calculator";
@@ -453,6 +460,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label labelValidation;
     }
 }
 

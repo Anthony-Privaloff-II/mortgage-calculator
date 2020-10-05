@@ -63,11 +63,13 @@ namespace MortgageCalculator
         //BUTTON CLICK EVENTS
         private void buttonCalculate_Click(object sender, EventArgs e)
         {
+            if (labelValidation.Visible) labelValidation.Visible = false; // Hide the Validation message upon clicking buttonCalculate.
             if (!string.IsNullOrWhiteSpace(textBoxMortgageAmountInput.Text) && !string.IsNullOrWhiteSpace(textBoxInterestRateInput.Text))   // Very simple validation to make sure nulls aren't passed.
             {
                 EventHandler Handler = this.CalculateEvent; // Assigning delegate to a temporary variable to snapshot value.
                 Handler?.Invoke(this, EventArgs.Empty);    // Invokes the CalculateEvent EventHandler delegate in a thread-safe way using the null-conditional operator '?'.
             }
+            else labelValidation.Visible = true; // Show the Validation message if fields were left empty.
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
