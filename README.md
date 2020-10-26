@@ -5,6 +5,7 @@ This is a simple WindowsForms application that takes a Mortgage Amount, Interest
 The purpose of this application is to demonstrate my experience with C# and .NET, and using them to create a WindowsForms application that follows the 'Model View Presenter' pattern.
 The application also demonstrates experience with Unit Testing. The test methods I use to test this application can be found in: /tests/MortgageCalculatorTests/InputTests.cs
 
-Eventually the ability to save and load Mortgage profiles through the use of a local SQL Database (Mortgages.mdf) will be completed to demonstrate experience with SQL, and integrating SQL into .NET applications.
+This application uses the Mortgages.mdf local SQL Database as a Data Source to demonstrate experience with SQL and integrating SQL in .NET / C# applications.
+The ability to save, load and delete Mortgage profiles stored as rows in the Mortgages table of the database is what I am currently working on, and will be completed within the next one or two updates.
 
 I created this application to brushup on the fundamentals of architectural patterns in UI applications, and in doing so create a program that will compliment a portfolio. 

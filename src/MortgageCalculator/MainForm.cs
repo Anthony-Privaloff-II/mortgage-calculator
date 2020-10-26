@@ -15,14 +15,16 @@ namespace MortgageCalculator
     {
         //FIELDS
         //PROPERTIES
+        public string RowName { get; set; }
         public int Period { get; set; }
         public decimal Principal { get; set; }
         public decimal MortgageTotal { get; set; }
         public decimal MonthlyPayment { get; set; }
         public decimal InterestRate { get; set; }
+        public BindingSource DropDownDataSource { get; set; } // Object to encapsulate the DataSource for the "Load" drop down list.
 
         public event EventHandler CalculateEvent;
-        public event EventHandler ValidateEvent;
+        // public event EventHandler ValidateEvent;  // UNUSED
         public event EventHandler SaveEvent;
         public event EventHandler LoadEvent;
 
@@ -30,12 +32,15 @@ namespace MortgageCalculator
         ////CONSTRUCTOR
         public MainForm()
         {
+            this.RowName = null;
             this.Principal = 0;
             this.Period = 0;
             this.MortgageTotal = 0m;
             this.MonthlyPayment = 0m;
             this.InterestRate = 0m;
+            this.DropDownDataSource = new BindingSource();
             InitializeComponent();
+            comboBoxLoad.DataSource = this.DropDownDataSource.DataSource;
         }
         ////
         
@@ -53,11 +58,27 @@ namespace MortgageCalculator
 
         public void UpdateUI()   // Method the Presenter calls to update the data in the View's fields after the Model performs its back-end logic.
         {
+            textBoxName.Text = this.RowName;
             textBoxPrincipalOutput.Text = this.Principal.ToString();
             textBoxMortgageTotal.Text = this.MortgageTotal.ToString();
             textBoxPeriodOutput.Text = this.Period.ToString();
             textBoxMonthlyPayment.Text = this.MonthlyPayment.ToString();
             textBoxInterestRateOutput.Text = this.InterestRate.ToString();
+
+            // This function is called after the properties in the view have been appropriately assigned, so we can enable the Saving features.
+            if (!textBoxSave.Enabled && !buttonSave.Enabled)
+            {
+                textBoxSave.Enabled = true;
+                buttonSave.Enabled = true;
+                labelSaveAs.Enabled = true;
+            }
+        }
+
+        public void UpdateDropDown()
+        {
+            comboBoxLoad.DataSource = this.DropDownDataSource.DataSource;
+            comboBoxLoad.ValueMember = "Name";
+            comboBoxLoad.DisplayMember = "Name";
         }
 
         //BUTTON CLICK EVENTS

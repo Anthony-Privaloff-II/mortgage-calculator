@@ -10,8 +10,8 @@ namespace MortgageCalculator
     public class MortgagePresenter
     {
         //FIELDS
-        private IView _view;    // The Presenter needs to be able to interact with the View so it will contains a references to its interface.
-        private IModel _model;  // The Presenter needs to be able to interact with the Model so it will contains a references to its interface.
+        private IView _view;    // The Presenter needs to be able to interact with the View so it will contain a references to its interface.
+        private IModel _model;  // The Presenter needs to be able to interact with the Model so it will contain a references to its interface.
 
         //PROPERTIES
         public IView View
@@ -44,6 +44,7 @@ namespace MortgageCalculator
         {
             this.View = view;
             this.Model = model;
+            this.UpdateDropDownDataSource();
             // Subscribing the Presenter's relevant methods to their associated Events:
             View.CalculateEvent += this.HandleCalculateEvent;
         }
@@ -59,7 +60,7 @@ namespace MortgageCalculator
             this.UpdateView();
         }
 
-        public void UpdateView()
+        public void UpdateView() // Will update the Load / Delete ComboBox Drop Down in the View with data pulled from Mortgages.mdf in the Model.
         {
             // The PRESENTER updates the data stored in the VIEW with the data stored in the MODEL
             View.Principal = Model.Principal;
@@ -69,6 +70,16 @@ namespace MortgageCalculator
             View.InterestRate = Model.InterestRate;
             // The PRESENTER then calls the VIEW's UpdateUI() method which updates the data displayed in the form's controls on the UI.
             View.UpdateUI();
+        }
+
+        private void UpdateDropDownDataSource()
+        {
+            // Populating the Model's BindingSource DropDownDataSource with Data pulled from the Mortgages Table.
+            Model.PopulateNames();
+            // Assigning the View's BindingSource DropDownDataSource to the initialized BindingSource DropDownDataSource in the Model.
+            View.DropDownDataSource = this.Model.DropDownDataSource;
+            // Updating the View's Drop Down list.
+            View.UpdateDropDown();
         }
 
         private void HandleCalculateEvent(object sender, EventArgs e) // Will be called when the "Calculate" event is raised from the view.

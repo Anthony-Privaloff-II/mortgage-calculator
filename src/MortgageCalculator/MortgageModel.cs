@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration;
+using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace MortgageCalculator
 {
@@ -10,13 +14,27 @@ namespace MortgageCalculator
     public class MortgageModel : IModel
     {
         //FIELDS
+        private string _rowName;
         private int _period;
         private decimal _principal;
         private decimal _mortgageTotal;
         private decimal _monthlyPayment;
         private decimal _interestRate;
+        private string _connectionString;
+        private SqlConnection _connection;
 
         //PROPERTIES
+        public string RowName
+        {
+            get
+            {
+                return _rowName;
+            }
+            set
+            {
+                _rowName = value;
+            }
+        }
         public int Period
         {
             get
@@ -72,16 +90,44 @@ namespace MortgageCalculator
                 _interestRate = value;
             }
         }
+        public string ConnectionString
+        {
+            get
+            {
+                return _connectionString;
+            }
+            set
+            {
+                _connectionString = value;
+            }
+        }
+        public SqlConnection Connection
+        {
+            get
+            {
+                return _connection;
+            }
+            set
+            {
+                _connection = value;
+            }
+        }
+
+        public BindingSource DropDownDataSource { get; set; } // Object to encapsulate the DataSource for the "Load" drop down list.
 
         //METHODS
         ////CONSTRUCTOR
         public MortgageModel()
         {
+            this.RowName = null;
             this.Principal = 0;
             this.MortgageTotal = 0;
             this.Period = 0;
             this.InterestRate = 0;
             this.MonthlyPayment = 0;
+            this.DropDownDataSource = new BindingSource();
+            // Initalzing ConnectionString to the Mortgages DataSource's ConnectionString to use in our application.
+            this.ConnectionString = ConfigurationManager.ConnectionStrings["MortgageCalculator.Properties.Settings.MortgagesConnectionString"].ConnectionString;
         }
         ////
         // This method performs the basic back-end calculations that determine the MonthlyPayment and MortgageTotal.
@@ -101,6 +147,19 @@ namespace MortgageCalculator
 
             this.MonthlyPayment = Decimal.Round(this.MonthlyPayment, 2);                     // Rounding the decimals to 2 decimal places for proper currency format.
             this.MortgageTotal = Decimal.Round(this.MortgageTotal, 2);
+        }
+
+        public void PopulateNames()
+        {
+            using (this.Connection = new SqlConnection(ConnectionString))
+            using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT Name FROM Mortgages", Connection))
+            {
+                DataTable nameTable = new DataTable();
+                adapter.Fill(nameTable);
+
+                this.DropDownDataSource.DataSource = nameTable;
+            }
+
         }
 
         private void Validate()  // Method for the Model to perform the more complicated validations needed after the basic UI validations in the View.

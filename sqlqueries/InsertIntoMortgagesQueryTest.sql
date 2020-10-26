@@ -1,0 +1,2 @@
+﻿INSERT INTO Mortgages
+VALUES ('Query Test', 1597.03, 383286.31, 20, 300000.00, 2.55);
